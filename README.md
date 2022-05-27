@@ -89,9 +89,22 @@
 
 표
 
+
+|컴포넌트|tsx|style.ts|
+|:--:|:--:|:--:|
+|Static_divs|<div align="center"> <img src="/readme_assets/imgs/chart1/1-1.jpg" width="600px"  alt="chart1/1-1.jpg"></div>|<div align="center"> <img src="/readme_assets/imgs/chart1/1-2.jpg" width="600px"  alt="chart1/1-2.jpg"></div>|
+|Pages|<div align="center"> <img src="/readme_assets/imgs/chart1/1-3.jpg" width="600px"  alt="chart1/1-3.jpg"></div>|<div align="center"> <img src="/readme_assets/imgs/chart1/1-4.jpg" width="600px"  alt="chart1/1-4.jpg"></div>|
+
+
+
+
+
+
+
+
 <br/>
 <br/>
-<div align="center"> <img src="/assets/5.svg" width="700px"  alt="그림 5: 운영체제와 프로세스"></div>
+<div align="center"> <img src="/assets/5.svg" width="600px"  alt="그림 5: 운영체제와 프로세스"></div>
 
 <br/>
 <br/>
@@ -105,7 +118,7 @@
 
 <br/>
 <br/>
-<div align="center"> <img src="/assets/6.svg" width="700px"  alt="그림 6: 운영체제와 프로세스"></div>
+<div align="center"> <img src="/assets/6.svg" width="600px"  alt="그림 6: 운영체제와 프로세스"></div>
 
 <br/>
 <br/>
@@ -132,7 +145,7 @@ MetadataContainer에는 MetadataDiv와 작품제목을 담당하는 MetadataSpan
 
 <br/>
 <br/>
-<div align="center"> <img src="/assets/7.svg" width="700px"  alt="그림 7: 운영체제와 프로세스"></div>
+<div align="center"> <img src="/assets/7.svg" width="600px"  alt="그림 7: 운영체제와 프로세스"></div>
 
 <br/>
 <br/>
