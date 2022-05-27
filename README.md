@@ -87,10 +87,11 @@
 그 다음으로 Page를 보여줄 Page Component들이다. 전부 SecondDiv의 하단부에 위치하고 SecondDiv의 긴 변을 기준으로 위치를 잡았다. Left, Center, Right 이렇게 3가지로 잡았다. 이 둘은 위치가 변할 일이 없는 정적 컴포넌트들이다. 
 
 
-표
+<br/>
+<br/>
 
 
-|컴포넌트|tsx|style.ts|
+|컴포넌트|.tsx|.style.ts|
 |:--:|:--:|:--:|
 |Static_divs|<div align="center"> <img src="/readme_assets/imgs/chart1/1-1.jpg" width="600px"  alt="chart1/1-1.jpg"></div>|<div align="center"> <img src="/readme_assets/imgs/chart1/1-2.jpg" width="600px"  alt="chart1/1-2.jpg"></div>|
 |Pages|<div align="center"> <img src="/readme_assets/imgs/chart1/1-3.jpg" width="600px"  alt="chart1/1-3.jpg"></div>|<div align="center"> <img src="/readme_assets/imgs/chart1/1-4.jpg" width="600px"  alt="chart1/1-4.jpg"></div>|
@@ -104,7 +105,7 @@
 
 <br/>
 <br/>
-<div align="center"> <img src="/assets/5.svg" width="600px"  alt="그림 5: 운영체제와 프로세스"></div>
+<div align="center"> <img src="/readme_assets/imgs/5.jpg" width="600px"  alt="그림 5: 운영체제와 프로세스"></div>
 
 <br/>
 <br/>
