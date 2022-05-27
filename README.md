@@ -41,7 +41,7 @@
 
 <br/>
 <br/>
-<div align="center"> <img src="/assets/3.svg" width="700px"  alt="그림 3: 운영체제와 프로세스"></div>
+<div align="center"> <img src="/readme_assets/imgs/3.jpg" width="700px"  alt="그림 3: 페이지 디자인 템플릿을 사용해 페이지를 디자인한 모습"></div>
 
 <br/>
 <br/>
