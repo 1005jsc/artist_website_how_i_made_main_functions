@@ -8,7 +8,7 @@
 
 <br/>
 <br/>
-<div align="center"> <img src="/assets/1.svg" width="700px"  alt="그림 1: 운영체제와 프로세스"></div>
+<div align="center"> <img src="/readme_assets/imgs/1.jpg" width="700px"  alt="그림 1: 운영체제와 프로세스"></div>
 
 <br/>
 <br/>
