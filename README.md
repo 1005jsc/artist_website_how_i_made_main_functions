@@ -26,7 +26,7 @@
 
 <br/>
 <br/>
-<div align="center"> <img src="/readme_assets/imgs/2.jpg" width="700px"  alt="그림 2: 운영체제와 프로세스"></div>
+<div align="center"> <img src="/readme_assets/imgs/2.svg" width="700px"  alt="그림 2: 운영체제와 프로세스"></div>
 
 <br/>
 <br/>
