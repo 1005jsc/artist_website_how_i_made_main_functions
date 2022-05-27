@@ -12,7 +12,7 @@
 
 <br/>
 <br/>
-<div align="center"> <span>그림 1 : '작품소개 보러가기'들의 예.</span></div>
+<div align="center"> <span>그림 1 : '작품소개 보러가기' 페이지들</span></div>
 
 <br/>
 <br/>
@@ -26,7 +26,7 @@
 
 <br/>
 <br/>
-<div align="center"> <img src="/assets/2.svg" width="700px"  alt="그림 2: 운영체제와 프로세스"></div>
+<div align="center"> <img src="/readme_assets/imgs/2.jpg" width="700px"  alt="그림 2: 운영체제와 프로세스"></div>
 
 <br/>
 <br/>
