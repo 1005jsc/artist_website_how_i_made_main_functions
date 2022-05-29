@@ -260,7 +260,7 @@ MetadataContainer에는 MetadataDiv와 작품제목을 담당하는 MetadataSpan
 <br/>
 <br/>
 
-```
+```typescript
 
 import { myApp } from './firebase';
 import { getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut } from "firebase/auth";
@@ -318,7 +318,7 @@ Firebase에서 제공하는 Auth의 Api들을 받아와, 본 웹사이트의 로
 <br/>
 
 
-``` 
+```typescript 
 
 const App = ({authService, databaseService,exhibitionImageUploadService, workImageUploadService}:AppProps) =>{
 
