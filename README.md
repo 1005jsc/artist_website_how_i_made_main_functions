@@ -126,7 +126,7 @@
 
 <br/>
 <br/>
-<div align="center"> <span>그림 6 : 페이지 디자인 템플릿의 정적인 부분</span></div>
+<div align="center"> <span>그림 6 : 페이지 디자인 템플릿의 동적인 부분 도식화</span></div>
 
 <br/>
 <br/>
