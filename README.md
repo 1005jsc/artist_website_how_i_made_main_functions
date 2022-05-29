@@ -148,12 +148,12 @@
 <br/>
 <br/>
 
-앞에서 만든 페이지 디자인 템플릿의 정적인 부분안에 동적인 컴포넌트를 집어 넣으면 페이지가 완성이 된다. 
+앞에서 만든 페이지 디자인 템플릿의 정적인 부분안에 동적인 컴포넌트를 집어 넣으면 비로소 페이지 한 쪽이 완성이 된다. 
 
-동적인 컴포넌트들은 실질적인 컨텐츠를 담는 컴포넌트들로 text container, image container, metadata container 이렇게 3종류가 있다. (1)에서 설명한 위치가 변할 일 없는 (static)정적인 컴포넌트와 달리 이 셋은 배치에 따라 위치를 변화시켜야 하기 때문에 동적인 컴포넌트라고 불리운다. (1)의 컴포넌트들 처럼 동적인 컴포넌트들도 기본적인 css를 정해놓고 시작한다. 
+동적인 컴포넌트들은 실질적인 컨텐츠를 담는 컴포넌트들로 text container, image container, metadata container 이렇게 3종류가 있다. (1)에서 설명한 위치가 변할 일 없는 정적인 컴포넌트와 달리 이 셋은 배치에 따라 위치를 변화시켜야 하기 때문에 동적인 컴포넌트라고 불리운다. (1)의 정적인 컴포넌트들 처럼 동적인 컴포넌트들도 기본적인 css를 정해놓고 시작한다. 
 
-Text container는 페이지안에서 Container가 차지하는 넓이부분을 정의해주기 위한 TextDiv와 실제 Text를 집어넣을 TextSpan으로 구성되어 있다. 
-TextDiv에 Width를 주어 글이 너무 넓게 벗어나지 않도록 하고 TextSpan에는 적당한 폰트사이즈와 줄 높이를 주었다. 
+Text container는 페이지안에서 Container가 차지하는 영역을 정해주기 위한 TextDiv와 실제 Text를 집어넣을 TextSpan으로 구성되어 있다. 
+TextDiv에 Width에 적당한 값을 주어 글이 너무 넓게 벗어나지 않도록 하고 TextSpan에는 적당한 폰트사이즈와 줄 높이를 주었다. 
 
 Image Container는 ImageDiv와 ImageHorizontalImg(수평으로 긴 이미지일 경우), ImageVerticalImg(수직으로 긴 이미지일 경우)로 되어있다. 
 간혹 연출 상 이미지의 크기가 페이지 보다 더 클 경우가 있는 상황에 대비해 ImageDiv에 ```overflow:hidden;```을 주었다. ImageHorizontalImg에는 수평의 길이가 부모의 크기와 맞아 떨어지도록 ```width: 100%;```을 넣었고 ImageVerticalImg에는 위와 똑같은 논리로 ```height: 100%;```을 넣었다. 
@@ -175,10 +175,8 @@ MetadataContainer에는 MetadataDiv와 작품제목을 담당하는 MetadataSpan
 <br/>
 
 
-
-
-
-정적인 부분은 이렇게 만들었고 실제 페이지를 디자인 할때는 각 컴포넌트들에게 위치에 관한 css만 추가적으로 넣어주면 된다. 위치에 관한 추가적인 css는 각 페이지 컴포넌트들 안에 개별적으로 명세 해놓았다. 그리고 각각의 동적 컴포넌트에 에셋을 앞에 작성한 FirstDiv, SecondDiv의 위치에 맞추어(예: ```position:absolue; top:0;, left:0;```) 배치하면 페이지가 완성된다.
+동적인 부분이 가져야할 가장 기본적인 스펙은은 위와 같이 만들었다. 동적인 컴포넌트에 에셋을 넣고, 위치에 관한 css코드만 추가적으로 넣어 배치하고자 하는 곳에 에셋 배치를 해주면 된다. 동적인 컴포넌트의 위치를 배치할 때 FirstDiv, SecondDiv의 가이드라인에 빈 틈 없이 배치하면 된다 (예: ```position:absolue; top:0;, left:0;```).
+위치에 관한 추가적인 css는 한 쪽의 페이지 전체를 나타내는 페이지 컴포넌트들 안에 개별적으로 명세 해놓았다(그림 7 확인).
 
 <br/>
 <br/>
