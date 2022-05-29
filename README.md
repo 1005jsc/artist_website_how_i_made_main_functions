@@ -249,7 +249,7 @@ MetadataContainer에는 MetadataDiv와 작품제목을 담당하는 MetadataSpan
 <br/>
 
 
-### 로그인 코드로 구현하기 
+### 로그인 구현하기 
 
 <br/>
 <br/>
@@ -299,7 +299,7 @@ class AuthService {
 
 
 <br/>
-<div align="center"> <span>그림 9 : 로그인 코드로 구현하기 - services/auth.js - </span></div>
+<div align="center"> <span>그림 9 : 로그인 구현하기 - services/auth.js - </span></div>
 
 <br/>
 <br/>
@@ -358,25 +358,25 @@ const handleLogin = (password:string|number) => {
 
 
 <br/>
-<div align="center"> <span>그림 10 : 로그인 코드로 구현하기 - App.tsx - </span></div>
+<div align="center"> <span>그림 10 : 로그인 구현하기 - App.tsx - </span></div>
 
 <br/>
 <br/>
 
-(1) login, setLogin: 가장 상위컴포넌트인 App.tsx에 login을 state변수로 등록하였다.
+(1) [login, setLogin]: 가장 상위컴포넌트인 App.tsx에 login을 state변수로 등록하였다.
 
-가장 위에서 위치해 하위컴포넌트들에게 Props로 전달해주기 위해서이다. 
+로그인 상태정보를 위에서 하위컴포넌트들에게 Props로 전달해주기 위해서이다. 
 
 <br/>
 
-(2) handleLogin: .env변수로 작가가 원하는 비밀번호를 등록하였다. 
+(2) handleLogin: .env에 정의한 작가 비밀번호가 맞으면 로그인이 성공하게 하였다.   
 
 login이 성공하면 AuthGooglePopupLogin을 실행해서 파이어베이스 로그인을 실행히준다. 파이어베이스 로그인이 완료되면 setLogin(true)를 해준다. 
 
 <br/>
 
-(3) useEffect : App.txt이 렌더될때마다 로그인 상태를 체크한다.
-    login값이나 authService값이 변할 때 마다 사용자 체크를 해준다. 
+(3) useEffect : App.txt이 렌더 될때마다 로그인 상태를 체크한다.
+    login값이나 authService값이 변할 때마다 useEffect가 다시 실행 되어 즉각적으로 사용자 체크를 해준다. 
 
 
 
