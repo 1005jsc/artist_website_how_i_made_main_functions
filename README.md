@@ -371,7 +371,7 @@ const handleLogin = (password:string|number) => {
 
 (2) handleLogin: .env에 정의한 작가 비밀번호가 맞으면 로그인이 성공하게 하였다.   
 
-login이 성공하면 AuthGooglePopupLogin을 실행해서 파이어베이스 로그인을 실행해 준다. 파이어베이스 로그인이 완료되면 setLogin(true)를 해준다. 
+login이 성공하면 AuthGooglePopupLogin을 실행해 파이어베이스 로그인을 실행해 준다. 파이어베이스 로그인이 완료되면 setLogin(true)를 해준다. 
 
 <br/>
 
@@ -380,7 +380,21 @@ login이 성공하면 AuthGooglePopupLogin을 실행해서 파이어베이스 �
 
 
 
+<br />
 
+<div id="11"></div>
+
+<br/>
+<br/>
+
+
+<br/>
+<br/>
+
+## 작품 확대하여 보기
+
+<br/>
+<br/>
 
 
 
