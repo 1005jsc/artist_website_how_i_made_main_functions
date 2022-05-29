@@ -1,6 +1,20 @@
 
 ## 주요기능 구현
 
+### 주요기능 구현 목차
+
+1. [**작품소개 보러가기**](#9)
+1. [**~~~**](#10)
+1. [**~~~**](#11)
+1. [**~~~**](#12)
+
+
+
+
+<br />
+
+<div id="9"></div>
+
 <br/>
 <br/>
 
@@ -12,7 +26,7 @@
 
 <br/>
 <br/>
-<div align="center"> <span>그림 1 : '작품소개 보러가기' 페이지들</span></div>
+<div align="center"> <span>그림 1 : 작품소개 보러가기 페이지들</span></div>
 
 <br/>
 <br/>
@@ -30,7 +44,7 @@
 
 <br/>
 <br/>
-<div align="center"> <span>그림 2 : '작품소개 보러가기' 페이지 디자인 템플릿</span></div>
+<div align="center"> <span>그림 2 : 작품소개 보러가기 페이지 디자인 템플릿</span></div>
 
 <br/>
 <br/>
@@ -55,7 +69,7 @@
 <br/>
 <br/>
 
-## '작품소개 보러가기' 기술구현 
+### 작품소개 보러가기 코드로 구현하기
 
 
 <br/>
@@ -175,7 +189,7 @@ MetadataContainer에는 MetadataDiv와 작품제목을 담당하는 MetadataSpan
 
 <br/>
 <br/>
-<div align="center"> <img src="/readme_assets/imgs/8-1.jpg" width="600px"  alt="그림 8: 완성된 페이지"></div>
+<div align="center"> <img src="/readme_assets/imgs/8.jpg" width="600px"  alt="그림 8: 완성된 페이지"></div>
 
 <br/>
 <br/>
