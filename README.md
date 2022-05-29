@@ -175,7 +175,7 @@ MetadataContainer에는 MetadataDiv와 작품제목을 담당하는 MetadataSpan
 
 <br/>
 <br/>
-<div align="center"> <img src="/readme_assets/imgs/8.jpg" width="600px"  alt="그림 8: 완성된 페이지"></div>
+<div align="center"> <img src="/readme_assets/imgs/8-1.jpg" width="600px"  alt="그림 8: 완성된 페이지"></div>
 
 <br/>
 <br/>
