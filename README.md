@@ -62,7 +62,10 @@
 <br/>
 
 
-### 요약: 페이지 디자인 템플릿을 바탕으로 재사용가능한 컴포넌트를 만들어서 이를 바탕으로 21개의 페이지를 제작한다
+### 요약: 페이지 디자인 템플릿을 바탕으로 (1) 정적인 컴포넌트로 페이지들의 디자인 가이드라인을 정하고, (2)동적인 컴포넌트로 (1)에 따라 컨텐츠들을 배치시킨다 이를 바탕으로 21개의 페이지를 제작한다.
+
+### 
+
 
 <br/>
 <br/>
@@ -115,7 +118,7 @@
 <br/>
 <br/>
 
-### (2) 컨텐츠를 담을 재사용컴포넌트 만들기
+### (2) 동적인 컴포넌트 만들기
 
 <br/>
 <br/>
@@ -129,17 +132,32 @@
 <br/>
 
 
-실질적인 컨텐츠를 담는 컴포넌트로 text container, image container, metadata container가 있다. (1)에서 설명한 위치가 변할 일 없는 (static)컴포넌트와 달리 이 셋은 배치에 따라 위치가 변하는 동적인 컴포넌트들이다. (1)의 컴포넌트들 처럼 동적인 컴포넌트들도 기본적인 css를 가지고 시작한다. 
+실질적인 컨텐츠를 담는 컴포넌트로 text container, image container, metadata container가 있다. (1)에서 설명한 위치가 변할 일 없는 (static)컴포넌트와 달리 이 셋은 배치에 따라 위치가 변하기 때문에 동적인 컴포넌트라고 불리운다. (1)의 컴포넌트들 처럼 동적인 컴포넌트들도 기본적인 css를 정해놓고 시작한다. 
 
 Text container는 페이지안에서 Container가 차지하는 넓이부분을 정의해주기 위한 TextDiv와 실제 Text를 집어넣을 TextSpan으로 구성되어 있따. 
 TextDiv에 Width를 주어 글이 너무 넓게 벗어나지 않도록 하고 TextSpan에는 적당한 폰트사이즈와 줄 높이를 주었다. 
 
 Image Container는 ImageDiv와 ImageHorizontalImg(수평으로 긴 이미지일 경우), ImageVerticalImg(수직으로 긴 이미지일 경우)로 되어있다. 
-혹시 모를 이미지의 삐져나옴에 대비해 ImageDiv에 overflow:hidden;을 주었다. ImageHorizontalImg에는 수평의 길이가 부모의 크기와 맞아 떨어지도록 width: 100%;을 넣었고 ImageVerticalImg에는 위와 똑같은 논리로 height: 100%;을 넣었다. 
+이미지의 삐져나옴에 대비해 ImageDiv에 ```overflow:hidden;```을 주었다. ImageHorizontalImg에는 수평의 길이가 부모의 크기와 맞아 떨어지도록 ```width: 100%;```을 넣었고 ImageVerticalImg에는 위와 똑같은 논리로 ```height: 100%;```을 넣었다. 
 
 MetadataContainer에는 MetadataDiv와 작품제목을 담당하는 MetadataSpan1, 크기, 재료, 년도를 담당하는 MetadataSpan2에 각자 쓰임에 맞춰 css를 작성해 주었다.
 
-표
+<br/>
+<br/>
+
+
+|컴포넌트|.tsx|.style.ts|
+|:--:|:--:|:--:|
+|Text container|<div align="center"> <img src="/readme_assets/imgs/chart2/2-1.jpg" width="600px"  alt="chart2/2-1.jpg"></div>|<div align="center"> <img src="/readme_assets/imgs/chart2/2-2.jpg" width="600px"  alt="chart2/2-2.jpg"></div>|
+|Metadata container|<div align="center"> <img src="/readme_assets/imgs/chart2/2-3.jpg" width="600px"  alt="chart2/2-3.jpg"></div>|<div align="center"> <img src="/readme_assets/imgs/chart2/2-4.jpg" width="600px"  alt="chart2/2-4.jpg"></div>|
+|Image container|<div align="center"> <img src="/readme_assets/imgs/chart2/2-5.jpg" width="600px"  alt="chart2/2-5.jpg"></div>|<div align="center"> <img src="/readme_assets/imgs/chart2/2-6.jpg" width="600px"  alt="chart2/2-6.jpg"></div>|
+
+
+<br/>
+<br/>
+
+
+
 
 
 정적인 부분은 이렇게 만들었고 실제 페이지를 디자인 할때는 각 컴포넌트들에게 위치에 관한 css만 추가적으로 넣어주면 된다. 위치에 관한 추가적인 css는 각 페이지 컴포넌트들 안에 개별적으로 명세 해놓았다. 
