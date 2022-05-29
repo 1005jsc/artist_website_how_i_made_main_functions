@@ -248,20 +248,6 @@ MetadataContainer에는 MetadataDiv와 작품제목을 담당하는 MetadataSpan
 
 <br/>
 <br/>
-<div align="center"> <span>그림 9 : services/auth.js </span></div>
-
-<br/>
-<br/>
-
-
-Firebase에서 제공하는 Auth의 Api들로 로그인, 로그아웃, 사용자체크 기능을 구현했다. 
-
-
-
-2. App.tsx
-
-<br/>
-<br/>
 <!-- <div align="center"> <img src="/readme_assets/imgs/10.jpg" width="600px"  alt="그림 10:"></div> -->
 
 ```
@@ -299,6 +285,24 @@ class AuthService {
 
  ```
 
+
+
+
+<br/>
+<br/>
+<div align="center"> <span>그림 9 : services/auth.js </span></div>
+
+<br/>
+<br/>
+
+
+Firebase에서 제공하는 Auth의 Api들로 로그인, 로그아웃, 사용자체크 기능을 구현했다. 
+
+
+
+2. App.tsx
+
+
 <br/>
 <br/>
 <!-- <div align="center"> <span>그림 10 : services/auth.js </span></div> -->
@@ -335,7 +339,11 @@ const handleLogin = (password:string|number) => {
     return false
   }
 }
-
+  return <section className={styles.myApp}>
+    ~~~
+    ~~~
+    </section>
+}
 ```
 
 
