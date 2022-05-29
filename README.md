@@ -240,7 +240,7 @@ MetadataContainer에는 MetadataDiv와 작품제목을 담당하는 MetadataSpan
 ### 로그인 코드로 구현하기 
 
 
-1. services/auth.js 
+### 1. services/auth.js 
 
 <br/>
 <br/>
@@ -300,7 +300,7 @@ Firebase에서 제공하는 Auth의 Api들로 로그인, 로그아웃, 사용자
 
 
 
-2. App.tsx
+### 2. App.tsx
 
 
 <br/>
@@ -350,9 +350,12 @@ const handleLogin = (password:string|number) => {
 <br/>
 <br/>
 
-(1) login, setLogin: 가장 상위컴포넌트인 App.tsx에 login을 state변수로 등록하였다. 가장 위에서 위치해 하위컴포넌트들에게 Props로 전달해주기 위해서이다. 
+(1) login, setLogin: 가장 상위컴포넌트인 App.tsx에 login을 state변수로 등록하였다.
+
+가장 위에서 위치해 하위컴포넌트들에게 Props로 전달해주기 위해서이다. 
 
 (2) handleLogin: .env변수로 작가가 원하는 비밀번호를 등록하였다. 
+
 login이 성공하면 AuthGooglePopupLogin을 실행해서 파이어베이스 로그인을 실행히준다. 파이어베이스 로그인이 완료되면 setLogin(true)를 해준다. 
 
 (3) useEffect 
