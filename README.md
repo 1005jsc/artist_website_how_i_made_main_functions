@@ -242,13 +242,9 @@ MetadataContainer에는 MetadataDiv와 작품제목을 담당하는 MetadataSpan
 
 ### 1. services/auth.js 
 
-<br/>
-<br/>
-<div align="center"> <img src="/readme_assets/imgs/9.jpg" width="600px"  alt="그림 9:"></div>
 
 <br/>
 <br/>
-<!-- <div align="center"> <img src="/readme_assets/imgs/10.jpg" width="600px"  alt="그림 10:"></div> -->
 
 ```
 
@@ -289,8 +285,7 @@ class AuthService {
 
 
 <br/>
-<br/>
-<div align="center"> <span>그림 9 : services/auth.js </span></div>
+<div align="center"> <span>그림 9 : 로그인 코드로 구현하기 - services/auth.js - </span></div>
 
 <br/>
 <br/>
@@ -299,13 +294,14 @@ class AuthService {
 Firebase에서 제공하는 Auth의 Api들로 로그인, 로그아웃, 사용자체크 기능을 구현했다. 
 
 
+<br/>
+<br/>
 
 ### 2. App.tsx
 
 
 <br/>
 <br/>
-<!-- <div align="center"> <span>그림 10 : services/auth.js </span></div> -->
 
 
 ``` 
@@ -348,6 +344,9 @@ const handleLogin = (password:string|number) => {
 
 
 <br/>
+<div align="center"> <span>그림 10 : 로그인 코드로 구현하기 - App.tsx - </span></div>
+
+<br/>
 <br/>
 
 (1) login, setLogin: 가장 상위컴포넌트인 App.tsx에 login을 state변수로 등록하였다.
@@ -358,8 +357,7 @@ const handleLogin = (password:string|number) => {
 
 login이 성공하면 AuthGooglePopupLogin을 실행해서 파이어베이스 로그인을 실행히준다. 파이어베이스 로그인이 완료되면 setLogin(true)를 해준다. 
 
-(3) useEffect 
-    App.txt이 렌더될때마다 로긍니 상태를 체크한다.
+(3) useEffect : App.txt이 렌더될때마다 로그인 상태를 체크한다.
     login값이나 authService값이 변할 때 마다 사용자 체크를 해준다. 
 
 
