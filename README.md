@@ -18,7 +18,7 @@
 <br/>
 <br/>
 
-### 작품소개 보러가기
+### 작품소개 보러가기 컨셉정리
 
 <br/>
 <br/>
@@ -228,14 +228,128 @@ MetadataContainer에는 MetadataDiv와 작품제목을 담당하는 MetadataSpan
 <br/>
 <br/>
 
+### 로그인 컨셉 정리
 
 
 
+작품사진업로드, 작품데이터 수정, 전시회 업로드 부분은 방문객이 접근해서는 안되는 private한 기능이다. 그리하여 이 웹사이트에는 로그인 기능을 추가할 필요가 있었다. 
+내 웹사이트는 백엔드가 없는 웹사이트지만 다행이도 구글 파이어베이스에서 로그인 기능을 지원해 주고 있어서 파이어베이스 로그인기능을 응용해 보기도 하였다. 파이어베이스에서는 이메일, 구글 깃허브 연동등 다양한 방법으로 계정인증을 할 수 있지만 웹사이트의 작가 사용자들은 이도 너무 복잡하고 계정을 일일히 외우고 다니기 어렵다고 하셨다. 그래서 작가본인이 가장 사용하기 편한 비밀번호로 로그인을 할 수 있도록 만들어야 했다. 결과로 작가가 제시해준 비밀번호를 .env변수로 넣고 작가의 비밀번호가 맞는지 판단하는 로직은 가장 상위 컴포넌트인 App.tsx에 넣어 놓았다. 로직으로 비밀번호가 맞으면 파이어베이스의 구글 로그인을 직접 작동하게끔 하였다. 이렇게 작가가 요구한 사항에도 맞추고 신용가능한 파이어베이스의 Auth조직을 사용하는 것을 동시에 성공시켰다. 
 
 
 
+### 로그인 코드로 구현하기 
 
 
+1. services/auth.js 
+
+<br/>
+<br/>
+<div align="center"> <img src="/readme_assets/imgs/9.jpg" width="600px"  alt="그림 9:"></div>
+
+<br/>
+<br/>
+<div align="center"> <span>그림 9 : services/auth.js </span></div>
+
+<br/>
+<br/>
+
+
+Firebase에서 제공하는 Auth의 Api들로 로그인, 로그아웃, 사용자체크 기능을 구현했다. 
+
+
+
+2. App.tsx
+
+<br/>
+<br/>
+<!-- <div align="center"> <img src="/readme_assets/imgs/10.jpg" width="600px"  alt="그림 10:"></div> -->
+
+```
+
+import { myApp } from './firebase';
+import { getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut } from "firebase/auth";
+
+
+class AuthService {
+
+  auth = getAuth(myApp)
+  googleProvider = new GoogleAuthProvider();
+
+  AuthGooglePopupLogin = () => {
+    signInWithPopup(this.auth, this.googleProvider)
+    
+  }
+
+
+  AuthGoogleLogout = (callback) => {
+    signOut(this.auth).then(callback).catch(()=> {
+      console.log('logout failed')
+    })
+  }
+  
+  AuthUserCheck = (callback) => {
+    onAuthStateChanged(this.auth, (user) => {
+      callback(user)
+    })
+  }
+
+
+} export default AuthService
+
+
+ ```
+
+<br/>
+<br/>
+<!-- <div align="center"> <span>그림 10 : services/auth.js </span></div> -->
+
+
+``` 
+
+const App = ({authService, databaseService,exhibitionImageUploadService, workImageUploadService}:AppProps) =>{
+
+  const [login, setLogin] = useState<boolean>(false)
+
+  useEffect(() => {
+    authService.AuthUserCheck((result:any) => {
+      if(result){
+        
+        setLogin(true)
+      }else{
+        setLogin(false)
+      }
+    })
+    
+  
+}, [login, authService])
+  
+
+
+const handleLogin = (password:string|number) => {
+  
+  if(password===process.env.REACT_APP_ART_WEBSITE_PRIVATE_ADMIN_PASSWORD){
+    authService.AuthGooglePopupLogin()
+    setLogin(true)
+    return true
+  }else{
+    return false
+  }
+}
+
+```
+
+
+<br/>
+<br/>
+
+(1) login, setLogin: 가장 상위컴포넌트인 App.tsx에 login을 state변수로 등록하였다. 가장 위에서 위치해 하위컴포넌트들에게 Props로 전달해주기 위해서이다. 
+
+(2) handleLogin: .env변수로 작가가 원하는 비밀번호를 등록하였다. 
+login이 성공하면 AuthGooglePopupLogin을 실행해서 파이어베이스 로그인을 실행히준다. 파이어베이스 로그인이 완료되면 setLogin(true)를 해준다. 
+
+(3) useEffect 
+    App.txt이 렌더될때마다 로긍니 상태를 체크한다.
+    login값이나 authService값이 변할 때 마다 사용자 체크를 해준다. 
 
 
 
