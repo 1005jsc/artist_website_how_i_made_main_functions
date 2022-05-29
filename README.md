@@ -17,9 +17,13 @@
 
 <br/>
 <br/>
+<br/>
+<br/>
 
-## 작품소개 보러가기
+### 작품소개 보러가기
 
+<br/>
+<br/>
 <br/>
 <br/>
 <div align="center"> <img src="/readme_assets/imgs/1.jpg" width="700px"  alt="그림 1: 운영체제와 프로세스"></div>
@@ -68,12 +72,16 @@
 
 <br/>
 <br/>
+<br/>
+<br/>
 
 ### 작품소개 보러가기 코드로 구현하기
 
 
 
 
+<br/>
+<br/>
 <br/>
 <br/>
 
@@ -204,7 +212,21 @@ MetadataContainer에는 MetadataDiv와 작품제목을 담당하는 MetadataSpan
  
 
 
+<br />
 
+<div id="10"></div>
+
+<br/>
+<br/>
+
+
+<br/>
+<br/>
+
+## 작품소개 보러가기
+
+<br/>
+<br/>
 
 
 
