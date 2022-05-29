@@ -122,7 +122,7 @@
 
 <br/>
 <br/>
-<div align="center"> <img src="/assets/6.svg" width="600px"  alt="그림 6: 운영체제와 프로세스"></div>
+<div align="center"> <img src="/readme_assets/imgs/6.jpg" width="600px"  alt="그림 6: 페이지 디자인 템플릿의 정적인 부분"></div>
 
 <br/>
 <br/>
@@ -134,11 +134,11 @@
 
 실질적인 컨텐츠를 담는 컴포넌트로 text container, image container, metadata container가 있다. (1)에서 설명한 위치가 변할 일 없는 (static)컴포넌트와 달리 이 셋은 배치에 따라 위치가 변하기 때문에 동적인 컴포넌트라고 불리운다. (1)의 컴포넌트들 처럼 동적인 컴포넌트들도 기본적인 css를 정해놓고 시작한다. 
 
-Text container는 페이지안에서 Container가 차지하는 넓이부분을 정의해주기 위한 TextDiv와 실제 Text를 집어넣을 TextSpan으로 구성되어 있따. 
+Text container는 페이지안에서 Container가 차지하는 넓이부분을 정의해주기 위한 TextDiv와 실제 Text를 집어넣을 TextSpan으로 구성되어 있다. 
 TextDiv에 Width를 주어 글이 너무 넓게 벗어나지 않도록 하고 TextSpan에는 적당한 폰트사이즈와 줄 높이를 주었다. 
 
 Image Container는 ImageDiv와 ImageHorizontalImg(수평으로 긴 이미지일 경우), ImageVerticalImg(수직으로 긴 이미지일 경우)로 되어있다. 
-이미지의 삐져나옴에 대비해 ImageDiv에 ```overflow:hidden;```을 주었다. ImageHorizontalImg에는 수평의 길이가 부모의 크기와 맞아 떨어지도록 ```width: 100%;```을 넣었고 ImageVerticalImg에는 위와 똑같은 논리로 ```height: 100%;```을 넣었다. 
+간혹 연출 상 이미지의 크기가 페이지 보다 더 클 경우가 있는 상황에 대비해 ImageDiv에 ```overflow:hidden;```을 주었다. ImageHorizontalImg에는 수평의 길이가 부모의 크기와 맞아 떨어지도록 ```width: 100%;```을 넣었고 ImageVerticalImg에는 위와 똑같은 논리로 ```height: 100%;```을 넣었다. 
 
 MetadataContainer에는 MetadataDiv와 작품제목을 담당하는 MetadataSpan1, 크기, 재료, 년도를 담당하는 MetadataSpan2에 각자 쓰임에 맞춰 css를 작성해 주었다.
 
@@ -160,20 +160,32 @@ MetadataContainer에는 MetadataDiv와 작품제목을 담당하는 MetadataSpan
 
 
 
-정적인 부분은 이렇게 만들었고 실제 페이지를 디자인 할때는 각 컴포넌트들에게 위치에 관한 css만 추가적으로 넣어주면 된다. 위치에 관한 추가적인 css는 각 페이지 컴포넌트들 안에 개별적으로 명세 해놓았다. 
+정적인 부분은 이렇게 만들었고 실제 페이지를 디자인 할때는 각 컴포넌트들에게 위치에 관한 css만 추가적으로 넣어주면 된다. 위치에 관한 추가적인 css는 각 페이지 컴포넌트들 안에 개별적으로 명세 해놓았다. 그리고 각각의 동적 컴포넌트에 에셋을 앞에 작성한 FirstDiv, SecondDiv의 위치에 맞추어(예: ```position:absolue; top:0;, left:0;```) 배치하면 페이지가 완성된다.
 
 <br/>
 <br/>
-<div align="center"> <img src="/assets/7.svg" width="600px"  alt="그림 7: 운영체제와 프로세스"></div>
+<div align="center"> <img src="/readme_assets/imgs/7.jpg" width="600px"  alt="그림 7: 완료된 페이지의 코드"></div>
 
 <br/>
 <br/>
-<div align="center"> <span>그림 7 : 페이지 디자인 템플릿의 정적인 부분</span></div>
+<div align="center"> <span>그림 7 : 완성된 페이지의 코드의 모습</span></div>
+
+<br/>
+<br/>
+
+<br/>
+<br/>
+<div align="center"> <img src="/readme_assets/imgs/8.jpg" width="600px"  alt="그림 8: 완성된 페이지"></div>
+
+<br/>
+<br/>
+<div align="center"> <span>그림 8 : 완성된 페이지의 모습</span></div>
 
 <br/>
 <br/>
 
 위와 같은 방법으로 총 21개의 페이지를 제작해 '작품소개 보러가기'섹션을 완성했다.
+ 
 
 
 
