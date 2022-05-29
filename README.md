@@ -148,8 +148,9 @@
 <br/>
 <br/>
 
+앞에서 만든 페이지 디자인 템플릿의 정적인 부분안에 동적인 컴포넌트를 집어 넣으면 페이지가 완성이 된다. 
 
-실질적인 컨텐츠를 담는 컴포넌트로 text container, image container, metadata container가 있다. (1)에서 설명한 위치가 변할 일 없는 (static)컴포넌트와 달리 이 셋은 배치에 따라 위치가 변하기 때문에 동적인 컴포넌트라고 불리운다. (1)의 컴포넌트들 처럼 동적인 컴포넌트들도 기본적인 css를 정해놓고 시작한다. 
+동적인 컴포넌트들은 실질적인 컨텐츠를 담는 컴포넌트들로 text container, image container, metadata container 이렇게 3종류가 있다. (1)에서 설명한 위치가 변할 일 없는 (static)정적인 컴포넌트와 달리 이 셋은 배치에 따라 위치를 변화시켜야 하기 때문에 동적인 컴포넌트라고 불리운다. (1)의 컴포넌트들 처럼 동적인 컴포넌트들도 기본적인 css를 정해놓고 시작한다. 
 
 Text container는 페이지안에서 Container가 차지하는 넓이부분을 정의해주기 위한 TextDiv와 실제 Text를 집어넣을 TextSpan으로 구성되어 있다. 
 TextDiv에 Width를 주어 글이 너무 넓게 벗어나지 않도록 하고 TextSpan에는 적당한 폰트사이즈와 줄 높이를 주었다. 
