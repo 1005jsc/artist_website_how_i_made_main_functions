@@ -73,7 +73,7 @@
 <br/>
 <br/>
 
-### 작품소개 보러가기 코드로 구현하기
+### 작품소개 보러가기 구현하기
 
 
 
@@ -398,8 +398,158 @@ login이 성공하면 AuthGooglePopupLogin을 실행해 파이어베이스 로�
 
 
 
+목표: 작품 이미지를 마우스 스크롤로 확대할 수 있게 만들기
 
 
+### 작품 확대하여 보기 컨셉정리
+
+구현목표 
+
+1. 스크롤 이벤트가 발생하면 스크롤 한 만큼 scale이 커진다. 
+-> scroll 이벤트 글 받고 e.deltaY로 얼마만큼 스크롤 되었는가 받은 후, css in js를 통해 작품이 scale을 늘려준다. 
+
+
+<br/>
+<br/>
+<div align="center"> <img src="/readme_assets/imgs/11.jpg" width="600px"  alt="그림 11: 완성된 페이지"></div>
+
+<br/>
+<br/>
+<div align="center"> <span>그림 11 : 마우스 휠을 가함에 따라 스케일이 커지는 모습 gif</span></div>
+
+<br/>
+<br/>
+
+
+
+2. 마우스 커서의 포인트를 기준으로 그림이 커진다 
+-> scroll 이벤트가 생기면 event로 마우스의 좌표를 받고 그 좌표점을 transform-origin으로 설정해준다. 그러면 아래와 같이 커진다. 
+
+
+<br/>
+<br/>
+<div align="center"> <img src="/readme_assets/imgs/12.jpg" width="600px"  alt="그림 12: 완성된 페이지"></div>
+
+<br/>
+<br/>
+<div align="center"> <span>그림 12 : transform-origin설정이 들어간 경우와 들어가지 않은 경우 비교 gif</span></div>
+
+<br/>
+<br/>
+
+
+
+### 작품 확대하여 보기 구현하기
+
+### 1. 사용된 컴포넌트들 
+
+작품사진(Picture)과 무한한 크기의 뒷배경(Frame)기능을 구현하기 위한 최소 컴포넌트들
+(컴포넌트의 이름에 집중하지 말자. 컴포넌트 이름은 대충 지었음)
+
+
+<br/>
+<br/>
+<div align="center"> <img src="/readme_assets/imgs/13.jpg" width="600px"  alt="그림 13: 완성된 페이지"></div>
+
+<br/>
+<br/>
+<div align="center"> <span>그림 13 : 컴포넌트들의 구성</span></div>
+
+<br/>
+<br/>
+
+
+1. modal_container(모달 파트) : 전체적인 모달 부모 section element
+
+2. grey_background(뒷배경 파트) : 흰 배경이 되는 부분 유저가 볼떄는 그림이 무한대의 크기의 흰 배경에 올려저 있는 느낌이 들게 느껴진다. 크기는 width, height 각각 100%
+
+3. image_container(뒷배경파트) : overflow: hidden;으로 그림이 무지막지하게 커져도 grey background를 벗어나는 것을 방지하고 useRef를 이요해 top과 left의 위치를 얻는다. 
+
+4. Frame(그림 파트): 실제 그림에 적용될 자바스크립트적 조작을 여기서 한다. 
+scale의 크기 변화와 scale크기변화에 따른 x, y의 상대위치 조정등의 로직이 들어가는 곳. 이번 기술의 핵심이 여기에서 적용된다. 
+
+5. Picture(실제 그림): 실제 그림이다. width:100%; 로 Frame의 크기와 크기변화에 직접적으로 영향을 받는다. 
+
+div가 쓸데없이 많지 않는가?.....
+
+사실 Frame하고 Picture는 합쳐저도 무방하다. grey_background, image_container도다. 그런데 이렇게 기능별로 세세하게 분리해놓은채 나중에 유지보수 하거나 더 나은 로직이 생기면 집어넣기 편하지 않나 생각하였다. 내 로직이 아직 완벽하다고는 생각이 잘 안들어서 이다. 
+
+
+### 로직 Frame에 적용하기
+
+1. wheel로 스케일 조절하기
+
+(1) useState로 비율을 state로 관리해준다. 
+
+(2) const ratioValue = ratio - 0.001*e.deltaY
+
+wheelEventHandler의 event로 스크롤 한 양 e.deltaY값을 받아온다. (참고로 마우스스크롤을 위로 올리면 e.deltaY값은 음수다)
+
+몇번의 실험 결과 0.001을 곱해주면 원하는 양 만큼 커지고 작아진다는 것을 알았다. 
+이상적으로 동작한다는 것을 알았다 .
+
+(3) setRatio(ratioValue)
+
+잘 가공된 ratioValue를 state에 집어 넣었다 
+
+(4) transform: (scale ~~)
+
+
+css in js(styled-component)로 동적으로 scale값을 관리해 주었다. 
+
+이제 스크롤에 따라 그림이 확대되긴 하지만, 점 (50%, 50%)기준으로만 확대하게 되었다. 
+
+2. 마우스 커서의 포인트를 기준점으로 삼기
+
+(1) <      > 를 state로 관리한다. 
+
+(2) 마우스 커서의 좌표를 가져오기
+
+마우스 커스의 좌표는 아래와 같이 얻을 수 있다. 
+
+
+
+```javascript
+//
+
+```
+
+
+<br/>
+<div align="center"> <span>그림 14 : 로그인 구현하기 - App.tsx - </span></div>
+
+<br/>
+<br/>
+
+표
+
+
+(e.clientX - getBoundingClientRect().left, e.clientY - getBoundingClientRect().top)은 Frame 컴포넌트를 기준으로 하는 마우스 커서의 좌표를 나타나게 된다. 
+
+
+3. 앞에서 구한 좌표를 transform-origin 값으로 넣기 
+
+transform-origin은 transform이 일어날 때 transform의 중심을 나타낸다. 
+
+여기도 물론 css in js를 사용해 transform-origin값을 동적으로 조절한다. 
+
+이제 이벤트가 일어나 scale값이 변할 때 마다 transform-origin은 마우스가 가리키고 있는 포인트로 잡히게 된다. 이렇게 되면 사용자는 사용자가 확대하고 싶어 했던 곳(마우스 포인터가 가리키고 있는 곳)을 중심으로 확대할 수 있게되어 그림을 더 세부적으로 자세하게 관찰 할 수 있게 된다. 
+
+
+
+
+
+
+<br/>
+<br/>
+<div align="center"> <img src="/readme_assets/imgs/15.jpg" width="600px"  alt="그림 13: 완성된 페이지"></div>
+
+<br/>
+<br/>
+<div align="center"> <span>그림 15 : 그림 확대하기 기능 최종 결과 .gif</span></div>
+
+<br/>
+<br/>
 
 
 
