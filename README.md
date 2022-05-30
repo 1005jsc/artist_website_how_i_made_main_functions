@@ -454,34 +454,34 @@ login이 성공하면 AuthGooglePopupLogin을 실행해 파이어베이스 로�
 <br/>
 <br/>
 
-### 1. 사용된 컴포넌트들 
+### 1. 엘리먼트들
 
 <br/>
 <br/>
 <br/>
-<div align="center"> <img src="/readme_assets/imgs/13.jpg" width="600px"  alt="그림 13: 컴포넌트들의 구성"></div>
+<div align="center"> <img src="/readme_assets/imgs/13.jpg" width="600px"  alt="그림 13: 엘리먼트들의 구성"></div>
 
 <br/>
 <br/>
-<div align="center"> <span>그림 13 : 컴포넌트들의 구성</span></div>
+<div align="center"> <span>그림 13 : 엘리먼트들의 구성</span></div>
 
 <br/>
 <br/>
 
 
-1. modal_container(모달 파트) : 전체적인 모달 부모 section element
+1. modal_container(모달 파트) : 모달의 가장 부모 컴포넌트 
 
-2. grey_background(뒷배경 파트) : 흰 배경이 되는 부분 유저가 볼떄는 그림이 무한대의 크기의 흰 배경에 올려저 있는 느낌이 들게 느껴진다. 크기는 width, height 각각 100%
+2. grey_background(뒷배경 파트) : 회색 배경, 관람자의 입장으로는 무한대의 크기의 회색 배경으로 느껴진다. width, height가 각각 100%로 modal_container의 크기와 동일하다. 
 
-3. image_container(뒷배경파트) : overflow: hidden;으로 그림이 무지막지하게 커져도 grey background를 벗어나는 것을 방지하고 useRef를 이요해 top과 left의 위치를 얻는다. 
+3. image_container(뒷배경파트) : ```overflow: hidden;```으로 그림이 커져도 grey_background를 벗어나는 것을 방지한다. useRef를 이용해 getBoundingClientRect로 modal_container의 top과 left의 위치를 얻는다(자세한 설명은 뒤에).
 
-4. Frame(그림 파트): 실제 그림에 적용될 자바스크립트적 조작을 여기서 한다. 
-scale의 크기 변화와 scale크기변화에 따른 x, y의 상대위치 조정등의 로직이 들어가는 곳. 이번 기술의 핵심이 여기에서 적용된다. 
+4. Frame(이미지 파트): 작품 이미지의 scale 변화와 transform-origin값의 설정 조작을 여기서 한다. 
+이번 장의 핵심기술이 여기에 적용된다. 
 
-5. Picture(실제 그림): 실제 그림이다. width:100%; 로 Frame의 크기와 크기변화에 직접적으로 영향을 받는다. 
+5. Picture(실제 이미지): img테그를 둘러 싼 div이고, 실제 작품이미지라고 생각할 수 있다. ```width:100%;``` 로 Frame에 가해지는 조작이 직접적으로 적용된다. 
 
-div가 쓸데없이 많지 않는가?.....
 
+> div가 쓸데없이 많지 않는가?.....
 사실 Frame하고 Picture는 합쳐저도 무방하다. grey_background, image_container도다. 그런데 이렇게 기능별로 세세하게 분리해놓은채 나중에 유지보수 하거나 더 나은 로직이 생기면 집어넣기 편하지 않나 생각하였다. 내 로직이 아직 완벽하다고는 생각이 잘 안들어서 이다. 
 
 
