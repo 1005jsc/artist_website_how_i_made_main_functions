@@ -482,7 +482,7 @@ login이 성공하면 AuthGooglePopupLogin을 실행해 파이어베이스 로�
 
 
 > div가 쓸데없이 많지 않는가?.....
-사실 Frame하고 Picture는 합쳐저도 무방하다. grey_background, image_container도다. 그런데 이렇게 기능별로 세세하게 분리해놓은채 나중에 유지보수 하거나 더 나은 로직이 생기면 집어넣기 편하지 않나 생각하였다. 내 로직이 아직 완벽하다고는 생각이 잘 안들어서 이다. 
+사실 Frame하고 Picture는 하나의 div로 합쳐저도 무방하다. grey_background, image_container도 그렇다. 그런데 이렇게 나눈 이유는 기능별로 세세하게 분리하는 것이 나중에 유지보수하기 더 편하다고 생각했기 때문이다.
 
 
 ### 로직 Frame에 적용하기
