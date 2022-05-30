@@ -396,22 +396,31 @@ login이 성공하면 AuthGooglePopupLogin을 실행해 파이어베이스 로�
 <br/>
 <br/>
 
+---
 
+### 목표: 작품 이미지를 마우스 스크롤로 확대할 수 있게 만들기
 
-목표: 작품 이미지를 마우스 스크롤로 확대할 수 있게 만들기
+---
+
+<br/>
+<br/>
 
 
 ### 작품 확대하여 보기 컨셉정리
+<br/>
+<br/>
 
 구현목표 
+<br/>
 
-1. 스크롤 이벤트가 발생하면 스크롤 한 만큼 scale이 커진다. 
--> scroll 이벤트 글 받고 e.deltaY로 얼마만큼 스크롤 되었는가 받은 후, css in js를 통해 작품이 scale을 늘려준다. 
+1. 마우스로 스크롤 한 만큼 작품 이미지의 scale이 커진다. 
+
+    -> scroll 이벤트를 통해 e.deltaY로 스크롤된 값을 받은 후, 작품 이미지의 scale값에 연결시켜준다. 
 
 
 <br/>
 <br/>
-<div align="center"> <img src="/readme_assets/imgs/11.jpg" width="600px"  alt="그림 11: 완성된 페이지"></div>
+<div align="center"> <img src="/readme_assets/imgs/11.jpg" width="600px"  alt="그림 11: 마우스 스크롤을 통해 작품 이미지의 scale이 커지는 모습"></div>
 
 <br/>
 <br/>
@@ -422,17 +431,18 @@ login이 성공하면 AuthGooglePopupLogin을 실행해 파이어베이스 로�
 
 
 
-2. 마우스 커서의 포인트를 기준으로 그림이 커진다 
--> scroll 이벤트가 생기면 event로 마우스의 좌표를 받고 그 좌표점을 transform-origin으로 설정해준다. 그러면 아래와 같이 커진다. 
+2. 마우스 커서가 가르키는 포인트를 작품 이미지가 확대되는 기준으로 설정한다 
+
+    -> scroll 이벤트가 생기면 event를 통해 마우스의 좌표값을 받고, 그 좌표점을 transform-origin으로 설정해준다.
 
 
 <br/>
 <br/>
-<div align="center"> <img src="/readme_assets/imgs/12.jpg" width="600px"  alt="그림 12: 완성된 페이지"></div>
+<div align="center"> <img src="/readme_assets/imgs/12.jpg" width="600px"  alt="그림 12: 기준점이 없이 확대되는 모습과 마우스 포인트를 기준으로 확대되는 모습의 비교 "></div>
 
 <br/>
 <br/>
-<div align="center"> <span>그림 12 : transform-origin설정이 들어간 경우와 들어가지 않은 경우 비교 gif</span></div>
+<div align="center"> <span>그림 12: 기준점이 없이 확대되는 모습과 마우스 포인트를 기준으로 확대되는 모습의 비교</span></div>
 
 <br/>
 <br/>
@@ -440,8 +450,13 @@ login이 성공하면 AuthGooglePopupLogin을 실행해 파이어베이스 로�
 
 
 ### 작품 확대하여 보기 구현하기
+<br/>
+<br/>
 
 ### 1. 사용된 컴포넌트들 
+
+<br/>
+<br/>
 
 작품사진(Picture)과 무한한 크기의 뒷배경(Frame)기능을 구현하기 위한 최소 컴포넌트들
 (컴포넌트의 이름에 집중하지 말자. 컴포넌트 이름은 대충 지었음)
