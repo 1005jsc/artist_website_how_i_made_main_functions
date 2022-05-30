@@ -6,7 +6,7 @@
 1. [**작품소개 보러가기**](#9)
 1. [**로그인**](#10)
 1. [**작품 확대하여 보기**](#11)
-1. [**Firebase와Cloudinary를 고른 이유**](#12)
+1. [**Firebase와 Cloudinary를 고른 이유**](#12)
 
 
 
@@ -503,9 +503,9 @@ login이 성공하면 AuthGooglePopupLogin을 실행해 파이어베이스 로�
 
 const WorkModal = ({ modalOff, workUrl }: WorkModalProps) => {
 
-const [ratio, setRatio] = useState(0.5);
+    const [ratio, setRatio] = useState(0.5);
 
-const wheelHandler: React.WheelEventHandler<HTMLDivElement> = (e) => {
+    const wheelHandler: React.WheelEventHandler<HTMLDivElement> = (e) => {
 
     const ratioValue = ratio - 0.001 * e.deltaY;
 
@@ -523,11 +523,11 @@ const Frame = styled.div`
     position: relative;
     transition: all 2s ease-out;
     transform: scale(
-            ${({ ratio }: FrameProps) => {
-                console.log(2.2*ratio)
-                return 2.2 * ratio;
-            }}
-        );
+        ${({ ratio }: FrameProps) => {
+            console.log(2.2*ratio)
+            return 2.2 * ratio;
+        }}
+    );
 `;
 ```
 
@@ -576,57 +576,52 @@ const WorkModal = ({ modalOff, workUrl }: WorkModalProps) => {
 	const [mouseStartY, setMouseStartY] = useState<number>(0);
 
 	const wheelHandler: React.WheelEventHandler<HTMLDivElement> = (e) => {
-		let imageContainer;
-		let offsetX = 0;
-		
-		if (imageContainerRef.current) {
-			imageContainer = imageContainerRef.current;
-			offsetX = e.clientX - imageContainer.getBoundingClientRect().left;
-			
-		
-		}
+    let imageContainer;
+    let offsetX = 0;
+    
+    if (imageContainerRef.current) {
+        imageContainer = imageContainerRef.current;
+        offsetX = e.clientX - imageContainer.getBoundingClientRect().left;
+        
+    
+    }
 
-		let offsetY = 0;
+    let offsetY = 0;
 
-		if (imageContainerRef.current) {
-			imageContainer = imageContainerRef.current;
-			offsetY = e.clientY - imageContainer.getBoundingClientRect().top;
-		}
+    if (imageContainerRef.current) {
+        imageContainer = imageContainerRef.current;
+        offsetY = e.clientY - imageContainer.getBoundingClientRect().top;
+    }
 
-		setMouseStartX(offsetX);
-		setMouseStartY(offsetY);
+    setMouseStartX(offsetX);
+    setMouseStartY(offsetY);
 
-		const ratioValue = ratio - 0.001 * e.deltaY;
+    const ratioValue = ratio - 0.001 * e.deltaY;
 
-		if (ratioValue >= 0.26 && ratioValue < 0.5) {
-			const slowDownRatioValue = ratioValue * 0.9;
+    if (ratioValue >= 0.26 && ratioValue < 0.5) {
+        const slowDownRatioValue = ratioValue * 0.9;
 
-			setRatio(slowDownRatioValue);
-		} else if (ratioValue >= 0.5 && ratioValue < 2.06) {
-			setRatio(ratioValue);
-		}
-	};
+        setRatio(slowDownRatioValue);
+    } else if (ratioValue >= 0.5 && ratioValue < 2.06) {
+        setRatio(ratioValue);
+    }
+};
 
-	const Frame = styled.div`
-		position: relative;
-		transition: all 2s ease-out;
-	
-		transform: scale(
-				${({ ratio }: FrameProps) => {
-					console.log(2.2*ratio)
-					return 2.2 * ratio;
-				}}
-			);
+const Frame = styled.div`
+    position: relative;
+    transition: all 2s ease-out;
 
+    transform: scale(
+        ${({ ratio }: FrameProps) => {
+            return 2.2 * ratio;
+        }}
+    );
 
-		transform-origin: ${({ mouseStartX }: FrameProps) => mouseStartX}px
-		${({ mouseStartY }: FrameProps) => mouseStartY}px;
-		
-		
-			
+    transform-origin: ${({ mouseStartX }: FrameProps) => mouseStartX}px
+    ${({ mouseStartY }: FrameProps) => mouseStartY}px;
+    
 
-	
-	`;
+`;
 
 }
 
@@ -634,40 +629,57 @@ const WorkModal = ({ modalOff, workUrl }: WorkModalProps) => {
 
 
 
-(1) <      > 를 state로 관리한다. 
+(1) 마우스 좌표를 state로 관리한다(mouseStartX, mouseStartY). 
 
-(2) 마우스 커서의 좌표를 가져오기
+(2) 마우스 커서의 좌표를 계산한다.
 
 마우스 커스의 좌표는 아래와 같이 얻을 수 있다. 
 
 
 
 
-
-<br/>
-<div align="center"> <span>그림 14 : 로그인 구현하기 - App.tsx - </span></div>
-
 <br/>
 <br/>
+<div align="center"> <img src="/readme_assets/imgs/14.jpg" width="600px"  alt="그림 14: 마우스 좌표 계산하기 "></div>
+<br/>
+<div align="center"> <span>그림 14 : 마우스 좌표 계산하기 - </span></div>
 
-표
-
-
-(e.clientX - getBoundingClientRect().left, e.clientY - getBoundingClientRect().top)은 Frame 컴포넌트를 기준으로 하는 마우스 커서의 좌표를 나타나게 된다. 
-
-
-3. 앞에서 구한 좌표를 transform-origin 값으로 넣기 
-
-transform-origin은 transform이 일어날 때 transform의 중심을 나타낸다. 
-
-여기도 물론 css in js를 사용해 transform-origin값을 동적으로 조절한다. 
-
-이제 이벤트가 일어나 scale값이 변할 때 마다 transform-origin은 마우스가 가리키고 있는 포인트로 잡히게 된다. 이렇게 되면 사용자는 사용자가 확대하고 싶어 했던 곳(마우스 포인터가 가리키고 있는 곳)을 중심으로 확대할 수 있게되어 그림을 더 세부적으로 자세하게 관찰 할 수 있게 된다. 
+<br/>
+<br/>
 
 
+|e.clientX,<br/> e.clientY|브라우저 기준으로 <br/>이벤트가 발생한 곳의 수평, 수직좌표|
+|:--:|:--:|
+|getBoundingClientRect().left,<br/>getBoundingClientRect().left, |브라우저 기준으로<br/> 이벤트가 일어난 엘리먼트의 (x,y)위치|
+
+<br/>
+<br/>
 
 
+---
 
+**마우스의 x좌표: e.clientX - getBoundingClientRect().left**
+<br/>
+
+**마우스의 y좌표: e.clientY - getBoundingClientRect().top**
+
+---
+
+<br/>
+<br/>
+
+위 처럼 Frame 컴포넌트를 기준으로 하는 마우스 커서의 좌표를 구할 수 있다. 
+
+구한 값을 setMouseStartX, setMouseStartY에 각각 넣는다.
+
+<br/>
+
+(3) 앞에서 구한 좌표를 transform-origin 값으로 넣기 
+<br/>
+
+transform-origin은 엘리먼트에 transform이 적용될 때 transform이 무슨 점을 중심으로 transform되는지를 정해주는 css property이다. 
+
+여기도 물론 css-in-js(styled-component)를 사용해 transform-origin값을 동적으로 조절한다. 
 
 <br/>
 <br/>
@@ -679,6 +691,29 @@ transform-origin은 transform이 일어날 때 transform의 중심을 나타낸�
 
 <br/>
 <br/>
+
+
+이제 스크롤 이벤트가 일어나 scale값이 변할 때 마다, 마우스 포인터가 가리키고 있는 점을 transform-origin로 설정하게 된다. 이제 유저는 마우스 포인터가 가리키고 있는 곳을 중심으로 이미지를 확대할 수 있게되어 전보다 좋은 UI로 이미지를 세부적으로 관찰할 수 있게 된다. 
+
+
+
+<br />
+
+<div id="12"></div>
+
+<br/>
+<br/>
+
+
+<br/>
+<br/>
+
+## Firebase와 Cloudinary를 고른 이유
+
+<br/>
+<br/>
+
+
 
 
 
