@@ -502,6 +502,7 @@ login이 성공하면 AuthGooglePopupLogin을 실행해 파이어베이스 로�
 ```typescript
 
 const WorkModal = ({ modalOff, workUrl }: WorkModalProps) => {
+
 const [ratio, setRatio] = useState(0.5);
 
 const wheelHandler: React.WheelEventHandler<HTMLDivElement> = (e) => {
@@ -519,6 +520,94 @@ const wheelHandler: React.WheelEventHandler<HTMLDivElement> = (e) => {
     }
 }
 const Frame = styled.div`
+    position: relative;
+    transition: all 2s ease-out;
+    transform: scale(
+            ${({ ratio }: FrameProps) => {
+                console.log(2.2*ratio)
+                return 2.2 * ratio;
+            }}
+        );
+`;
+```
+
+(1) ratio를 state로 관리해준다. 
+
+(2) const ratioValue = ratio - 0.001*e.deltaY
+
+wheelEventHandler의 event로 스크롤 한 양 e.deltaY값을 받아온다. (마우스스크롤을 위로 올릴시 e.deltaY값은 음수이다)
+
+테스트를 진행해본 결과, 0.001을 곱해주자 이상적인 확대속도가 나왔다.
+
+(3) setRatio(ratioValue)
+
+if문을 넣어 이미지가 너무 작아질시 이미지 확대속도와 일반 확대속도를 구분하였다. 이렇게 계산된 ratioValue는 setRatio(ratioValue)를 통해 state를 업데이트 해주었다. 
+
+
+(4) transform: scale( ~~ ) 
+
+css-in-js(styled-component)로 scale값을 동적으로 관리해 주었다. 
+
+
+<br/>
+<br/>
+
+이제 스크롤에 따라 이미지가 확대되긴 하지만, 이미지 확대의 기준점이 없어 확대시 이미지가 좌우로 크게 흔들려 방문객이 불편을 느낄것으로 예상되었다.
+
+<br/>
+
+
+2. 마우스 커서의 포인트를 기준점으로 삼기
+
+```typescript
+
+const WorkModal = ({ modalOff, workUrl }: WorkModalProps) => {
+	// 줌앤 패닝  줌 비율
+	const [ratio, setRatio] = useState(0.5);
+
+	const frameRef = useRef<HTMLDivElement>(null);
+	const imageContainerRef = useRef<HTMLDivElement>(null);
+
+	
+
+	// 스크롤의 기준점
+
+	const [mouseStartX, setMouseStartX] = useState<number>(0);
+	const [mouseStartY, setMouseStartY] = useState<number>(0);
+
+	const wheelHandler: React.WheelEventHandler<HTMLDivElement> = (e) => {
+		let imageContainer;
+		let offsetX = 0;
+		
+		if (imageContainerRef.current) {
+			imageContainer = imageContainerRef.current;
+			offsetX = e.clientX - imageContainer.getBoundingClientRect().left;
+			
+		
+		}
+
+		let offsetY = 0;
+
+		if (imageContainerRef.current) {
+			imageContainer = imageContainerRef.current;
+			offsetY = e.clientY - imageContainer.getBoundingClientRect().top;
+		}
+
+		setMouseStartX(offsetX);
+		setMouseStartY(offsetY);
+
+		const ratioValue = ratio - 0.001 * e.deltaY;
+
+		if (ratioValue >= 0.26 && ratioValue < 0.5) {
+			const slowDownRatioValue = ratioValue * 0.9;
+
+			setRatio(slowDownRatioValue);
+		} else if (ratioValue >= 0.5 && ratioValue < 2.06) {
+			setRatio(ratioValue);
+		}
+	};
+
+	const Frame = styled.div`
 		position: relative;
 		transition: all 2s ease-out;
 	
@@ -530,52 +619,29 @@ const Frame = styled.div`
 			);
 
 
+		transform-origin: ${({ mouseStartX }: FrameProps) => mouseStartX}px
+		${({ mouseStartY }: FrameProps) => mouseStartY}px;
+		
 		
 			
 
 	
 	`;
+
+}
+
 ```
 
 
 
+(1) <      > 를 state로 관리한다. 
+
+(2) 마우스 커서의 좌표를 가져오기
+
+마우스 커스의 좌표는 아래와 같이 얻을 수 있다. 
 
 
 
-    (1) ratio를 state로 관리해준다. 
-
-    (2) const ratioValue = ratio - 0.001*e.deltaY
-
-    wheelEventHandler의 event로 스크롤 한 양 e.deltaY값을 받아온다. (참고로 마우스스크롤을 위로 올리면 e.deltaY값은 음수다)
-
-    몇번의 실험 결과 0.001을 곱해주면 원하는 양 만큼 커지고 작아진다는 것을 알았다. 
-    이상적으로 동작한다는 것을 알았다 .
-
-    (3) setRatio(ratioValue)
-
-    잘 가공된 ratioValue를 state에 집어 넣었다 
-
-    (4) transform: (scale ~~)
-
-
-    css in js(styled-component)로 동적으로 scale값을 관리해 주었다. 
-
-    이제 스크롤에 따라 그림이 확대되긴 하지만, 확
-
-2. 마우스 커서의 포인트를 기준점으로 삼기
-
-    (1) <      > 를 state로 관리한다. 
-
-    (2) 마우스 커서의 좌표를 가져오기
-
-    마우스 커스의 좌표는 아래와 같이 얻을 수 있다. 
-
-
-
-<!-- ```javascript
-//
-
-``` -->
 
 
 <br/>
