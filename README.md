@@ -484,7 +484,7 @@ login이 성공하면 AuthGooglePopupLogin을 실행해 파이어베이스 로�
 <br/>
 
 > div가 쓸데없이 많지 않는가?.....
-사실 Frame하고 Picture는 하나의 div로 합쳐저도 무방하다. grey_background, image_container도 그렇다. 그런데 이렇게 나눈 이유는 기능별로 세세하게 분리하는 것이 나중에 유지보수하기 더 편하다고 생각했기 때문이다.
+사실 Frame과 Picture는 하나의 div로 합쳐저도 무방하다. grey_background, image_container도 그렇다. 그런데 이렇게 나눈 이유는 기능별로 세세하게 분리하는 것이 나중에 유지보수하기 더 편하다고 생각했기 때문이다.
 
 <br/>
 <br/>
@@ -499,33 +499,33 @@ login이 성공하면 AuthGooglePopupLogin을 실행해 파이어베이스 로�
 
 1. wheel로 스케일 조절하기
 
-(1) useState로 비율을 state로 관리해준다. 
+    (1) useState로 비율을 state로 관리해준다. 
 
-(2) const ratioValue = ratio - 0.001*e.deltaY
+    (2) const ratioValue = ratio - 0.001*e.deltaY
 
-wheelEventHandler의 event로 스크롤 한 양 e.deltaY값을 받아온다. (참고로 마우스스크롤을 위로 올리면 e.deltaY값은 음수다)
+    wheelEventHandler의 event로 스크롤 한 양 e.deltaY값을 받아온다. (참고로 마우스스크롤을 위로 올리면 e.deltaY값은 음수다)
 
-몇번의 실험 결과 0.001을 곱해주면 원하는 양 만큼 커지고 작아진다는 것을 알았다. 
-이상적으로 동작한다는 것을 알았다 .
+    몇번의 실험 결과 0.001을 곱해주면 원하는 양 만큼 커지고 작아진다는 것을 알았다. 
+    이상적으로 동작한다는 것을 알았다 .
 
-(3) setRatio(ratioValue)
+    (3) setRatio(ratioValue)
 
-잘 가공된 ratioValue를 state에 집어 넣었다 
+    잘 가공된 ratioValue를 state에 집어 넣었다 
 
-(4) transform: (scale ~~)
+    (4) transform: (scale ~~)
 
 
-css in js(styled-component)로 동적으로 scale값을 관리해 주었다. 
+    css in js(styled-component)로 동적으로 scale값을 관리해 주었다. 
 
-이제 스크롤에 따라 그림이 확대되긴 하지만, 점 (50%, 50%)기준으로만 확대하게 되었다. 
+    이제 스크롤에 따라 그림이 확대되긴 하지만, 점 (50%, 50%)기준으로만 확대하게 되었다. 
 
 2. 마우스 커서의 포인트를 기준점으로 삼기
 
-(1) <      > 를 state로 관리한다. 
+    (1) <      > 를 state로 관리한다. 
 
-(2) 마우스 커서의 좌표를 가져오기
+    (2) 마우스 커서의 좌표를 가져오기
 
-마우스 커스의 좌표는 아래와 같이 얻을 수 있다. 
+    마우스 커스의 좌표는 아래와 같이 얻을 수 있다. 
 
 
 
