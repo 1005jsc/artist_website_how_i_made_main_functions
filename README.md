@@ -499,7 +499,53 @@ login이 성공하면 AuthGooglePopupLogin을 실행해 파이어베이스 로�
 
 1. wheel로 스케일 조절하기
 
-    (1) useState로 비율을 state로 관리해준다. 
+```typescript
+
+const WorkModal = ({ modalOff, workUrl }: WorkModalProps) => {
+const [ratio, setRatio] = useState(0.5);
+
+const wheelHandler: React.WheelEventHandler<HTMLDivElement> = (e) => {
+
+    const ratioValue = ratio - 0.001 * e.deltaY;
+
+    if (ratioValue >= 0.26 && ratioValue < 0.5) {
+        const slowDownRatioValue = ratioValue * 0.9;
+
+        setRatio(slowDownRatioValue);
+    } else if (ratioValue >= 0.5 && ratioValue < 2.06) {
+        setRatio(ratioValue);
+    }
+
+    }
+}
+const Frame = styled.div`
+		position: relative;
+		transition: all 2s ease-out;
+	
+		transform: scale(
+				${({ ratio }: FrameProps) => {
+					console.log(2.2*ratio)
+					return 2.2 * ratio;
+				}}
+			);
+
+
+		
+			
+
+	
+	`;
+
+
+
+
+```
+
+
+
+
+
+    (1) ratio를 state로 관리해준다. 
 
     (2) const ratioValue = ratio - 0.001*e.deltaY
 
@@ -517,7 +563,7 @@ login이 성공하면 AuthGooglePopupLogin을 실행해 파이어베이스 로�
 
     css in js(styled-component)로 동적으로 scale값을 관리해 주었다. 
 
-    이제 스크롤에 따라 그림이 확대되긴 하지만, 점 (50%, 50%)기준으로만 확대하게 되었다. 
+    이제 스크롤에 따라 그림이 확대되긴 하지만, 확
 
 2. 마우스 커서의 포인트를 기준점으로 삼기
 
