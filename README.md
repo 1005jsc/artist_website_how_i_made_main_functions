@@ -650,7 +650,7 @@ const Frame = styled.div`
 
 |e.clientX,<br/> e.clientY|브라우저 기준으로 <br/>이벤트가 발생한 곳의 수평, 수직좌표|
 |:--:|:--:|
-|getBoundingClientRect().left,<br/>getBoundingClientRect().left, |브라우저 기준으로<br/> 이벤트가 일어난 엘리먼트의 (x,y)위치|
+|getBoundingClientRect().left,<br/>getBoundingClientRect().top, |브라우저 기준으로<br/> 이벤트가 일어난 엘리먼트의 (x,y)위치|
 
 <br/>
 <br/>
@@ -677,7 +677,7 @@ const Frame = styled.div`
 (3) 앞에서 구한 좌표를 transform-origin 값으로 넣기 
 <br/>
 
-transform-origin은 엘리먼트에 transform이 적용될 때 transform이 무슨 점을 중심으로 transform되는지를 정해주는 css property이다. 
+transform-origin은 엘리먼트에 transform이 적용될 때, transform이 무슨 점을 중심으로 transform되는지를 정해주는 css property이다. 
 
 여기도 물론 css-in-js(styled-component)를 사용해 transform-origin값을 동적으로 조절한다. 
 
