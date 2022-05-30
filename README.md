@@ -454,16 +454,16 @@ login이 성공하면 AuthGooglePopupLogin을 실행해 파이어베이스 로�
 <br/>
 <br/>
 
-### 1. 엘리먼트들
+### 1. 사용된 엘리먼트들
 
 <br/>
 <br/>
 <br/>
-<div align="center"> <img src="/readme_assets/imgs/13.jpg" width="600px"  alt="그림 13: 엘리먼트들의 구성"></div>
+<div align="center"> <img src="/readme_assets/imgs/13.jpg" width="600px"  alt="그림 13: 사용된 엘리먼트들의 구성"></div>
 
 <br/>
 <br/>
-<div align="center"> <span>그림 13 : 엘리먼트들의 구성</span></div>
+<div align="center"> <span>그림 13 : 사용된 엘리먼트들의 구성</span></div>
 
 <br/>
 <br/>
@@ -480,12 +480,22 @@ login이 성공하면 AuthGooglePopupLogin을 실행해 파이어베이스 로�
 
 5. Picture(실제 이미지): img테그를 둘러 싼 div이고, 실제 작품이미지라고 생각할 수 있다. ```width:100%;``` 로 Frame에 가해지는 조작이 직접적으로 적용된다. 
 
+<br/>
+<br/>
 
 > div가 쓸데없이 많지 않는가?.....
 사실 Frame하고 Picture는 하나의 div로 합쳐저도 무방하다. grey_background, image_container도 그렇다. 그런데 이렇게 나눈 이유는 기능별로 세세하게 분리하는 것이 나중에 유지보수하기 더 편하다고 생각했기 때문이다.
 
+<br/>
+<br/>
 
-### 로직 Frame에 적용하기
+
+### 목표한 기능을 Frame에 적용하기
+
+
+<br/>
+<br/>
+
 
 1. wheel로 스케일 조절하기
 
