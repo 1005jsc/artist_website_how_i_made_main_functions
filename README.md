@@ -446,6 +446,7 @@ login이 성공하면 AuthGooglePopupLogin을 실행해 파이어베이스 로�
 
 <br/>
 <br/>
+<br/>
 
 
 
@@ -457,14 +458,8 @@ login이 성공하면 AuthGooglePopupLogin을 실행해 파이어베이스 로�
 
 <br/>
 <br/>
-
-작품사진(Picture)과 무한한 크기의 뒷배경(Frame)기능을 구현하기 위한 최소 컴포넌트들
-(컴포넌트의 이름에 집중하지 말자. 컴포넌트 이름은 대충 지었음)
-
-
 <br/>
-<br/>
-<div align="center"> <img src="/readme_assets/imgs/13.jpg" width="600px"  alt="그림 13: 완성된 페이지"></div>
+<div align="center"> <img src="/readme_assets/imgs/13.jpg" width="600px"  alt="그림 13: 컴포넌트들의 구성"></div>
 
 <br/>
 <br/>
