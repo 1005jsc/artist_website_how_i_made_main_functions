@@ -563,19 +563,19 @@ css-in-js(styled-component)로 scale값을 동적으로 관리해 주었다.
 
 const WorkModal = ({ modalOff, workUrl }: WorkModalProps) => {
 	// 줌앤 패닝  줌 비율
-	const [ratio, setRatio] = useState(0.5);
+const [ratio, setRatio] = useState(0.5);
 
-	const frameRef = useRef<HTMLDivElement>(null);
-	const imageContainerRef = useRef<HTMLDivElement>(null);
+const frameRef = useRef<HTMLDivElement>(null);
+const imageContainerRef = useRef<HTMLDivElement>(null);
 
-	
 
-	// 스크롤의 기준점
 
-	const [mouseStartX, setMouseStartX] = useState<number>(0);
-	const [mouseStartY, setMouseStartY] = useState<number>(0);
+// 스크롤의 기준점
 
-	const wheelHandler: React.WheelEventHandler<HTMLDivElement> = (e) => {
+const [mouseStartX, setMouseStartX] = useState<number>(0);
+const [mouseStartY, setMouseStartY] = useState<number>(0);
+
+const wheelHandler: React.WheelEventHandler<HTMLDivElement> = (e) => {
     let imageContainer;
     let offsetX = 0;
     
