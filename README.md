@@ -421,7 +421,7 @@ login이 성공하면 AuthGooglePopupLogin을 실행해 파이어베이스 로�
 
 <br/>
 <br/>
-<div align="center"> <img src="/readme_assets/imgs/11.jpg" width="600px"  alt="그림 11: 마우스 스크롤을 통해 작품 이미지의 scale이 커지는 모습"></div>
+<div align="center"> <img src="/readme_assets/gifs/11.gif" width="600px"  alt="그림 11: 마우스 스크롤을 통해 작품 이미지의 scale이 커지는 모습"></div>
 
 <br/>
 <br/>
@@ -649,9 +649,9 @@ const Frame = styled.div`
 <br/>
 
 
-|e.clientX,<br/> e.clientY|브라우저 기준으로 <br/>이벤트가 발생한 곳의 수평, 수직좌표|
+|e.clientX,<br/> e.clientY|브라우저 뷰포트(viewport) 기준으로 <br/>이벤트가 발생한 곳의 수평, 수직좌표|
 |:--:|:--:|
-|getBoundingClientRect().left,<br/>getBoundingClientRect().top, |브라우저 기준으로<br/> 이벤트가 일어난 엘리먼트의 (x,y)위치|
+|getBoundingClientRect().left,<br/>getBoundingClientRect().top, |브라우저 뷰포트(viewport)기준으로<br/> 이벤트가 일어난 엘리먼트의 (x,y)위치|
 
 <br/>
 <br/>
@@ -659,10 +659,10 @@ const Frame = styled.div`
 
 ---
 
-**마우스의 x좌표: e.clientX - getBoundingClientRect().left**
+**마우스의 x좌표 : e.clientX - getBoundingClientRect().left**
 <br/>
 
-**마우스의 y좌표: e.clientY - getBoundingClientRect().top**
+**마우스의 y좌표 : e.clientY - getBoundingClientRect().top**
 
 ---
 
