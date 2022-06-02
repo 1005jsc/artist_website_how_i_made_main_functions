@@ -410,7 +410,8 @@ login이 성공하면 AuthGooglePopupLogin을 실행해 파이어베이스 로�
 <br/>
 <br/>
 
-구현목표 
+### 구현목표 
+<br/>
 <br/>
 
 1. 마우스로 스크롤 한 만큼 작품 이미지의 scale이 커진다. 
