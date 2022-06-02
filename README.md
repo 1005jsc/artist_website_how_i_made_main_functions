@@ -641,7 +641,7 @@ const Frame = styled.div`
 
 <br/>
 <br/>
-<div align="center"> <img src="/readme_assets/imgs/14.svg" width="600px"  alt="그림 14: 마우스 좌표 계산하기 "></div>
+<div align="center"> <img src="/readme_assets/imgs/14.svg" width="700px"  alt="그림 14: 마우스 좌표 계산하기 "></div>
 <br/>
 <div align="center"> <span>그림 14 : 마우스 좌표 계산하기 - </span></div>
 
