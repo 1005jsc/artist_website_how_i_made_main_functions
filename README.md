@@ -425,7 +425,7 @@ login이 성공하면 AuthGooglePopupLogin을 실행해 파이어베이스 로�
 
 <br/>
 <br/>
-<div align="center"> <span>그림 11 : 마우스 휠을 가함에 따라 스케일이 커지는 모습 gif</span></div>
+<div align="center"> <span>그림 11 : 마우스 휠을 가함에 따라 스케일이 커지는 모습(이미지 확대 기준 설정 적용 전) gif</span></div>
 
 <br/>
 <br/>
@@ -439,7 +439,7 @@ login이 성공하면 AuthGooglePopupLogin을 실행해 파이어베이스 로�
 
 <br/>
 <br/>
-<div align="center"> <img src="/readme_assets/imgs/12.jpg" width="600px"  alt="그림 12: 기준점이 없이 확대되는 모습과 마우스 포인트를 기준으로 확대되는 모습의 비교 "></div>
+<div align="center"> <img src="/readme_assets/gifs/12-1.gif" width="400px"  alt="그림 12: 기준점이 없이 확대되는 모습과 마우스 포인트를 기준으로 확대되는 모습의 비교 "><img src="/readme_assets/gifs/12-2.gif" width="400px"  alt="그림 12: 기준점이 없이 확대되는 모습과 마우스 포인트를 기준으로 확대되는 모습의 비교 "></div>
 
 <br/>
 <br/>
