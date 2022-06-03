@@ -770,12 +770,15 @@ Firebase Storage는 Firebase Auth와 연동하여 이미지 각각에 보안 조
 <br/>
 <br/><br/>
 
-### 결과: 데이터 저장소: Firebase, 이미지 저장소 -> Cloudinary
+### 결과:
+
+<br/><br/> 
+
 |데이터 저장소|**Firebase**|
 |:--:|:--:|
-|이미지 저장소|**Cloudinary**|
+|**이미지 저장소**|**Cloudinary**|
 
-<br/>
+<br/><br/>
 <br/><br/>
 <br/><br/>
 
