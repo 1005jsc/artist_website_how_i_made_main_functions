@@ -679,10 +679,10 @@ const Frame = styled.div`
 
 ---
 
-**컴포넌트를 기준으로한 마우스의 x좌표(offsetX) : e.clientX - getBoundingClientRect().left**
+**offsetX(컴포넌트를 기준으로한 마우스의 x좌표) : e.clientX - getBoundingClientRect().left**
 <br/>
 
-**컴포넌트를 기준으로한 마우스의 y좌표(offsetY) : e.clientY - getBoundingClientRect().top**
+**offsetY(컴포넌트를 기준으로한 마우스의 y좌표) : e.clientY - getBoundingClientRect().top**
 
 ---
 
@@ -772,7 +772,7 @@ Firebase Storage는 Firebase Auth와 연동하여 이미지 각각에 보안 조
 
 ### 결과:
 
-<br/><br/> 
+<br/>
 
 |데이터 저장소|**Firebase**|
 |:--:|:--:|
