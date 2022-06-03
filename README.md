@@ -740,12 +740,12 @@ Firebase Storage는 Firebase Auth와 연동하여 이미지 각각에 보안 조
 
 <br/>
 <br/>
-
+<br/>
 
 |이미지 저장소 비교|Firebase Storage|Cloudinary|
 |:--:|:--:|:--:|
 |가격|무료|무료|
-|이미지 한장 당<br/> 최대용량|5MB|10MB|
+|이미지 한장 당<br/> 최대용량|5MB|**10MB**|
 |이미지 에셋<br/> 편집기능|X|O (지원은 해주나 백엔드 없이 <br/>Rest Api를 통한 서비스는 제한적임)|
 
 <br/>
@@ -769,8 +769,6 @@ Firebase Storage는 Firebase Auth와 연동하여 이미지 각각에 보안 조
 <br/>
 <br/><br/>
 <br/><br/>
-<br/><br/>
-<br/>
 
 
 
