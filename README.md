@@ -684,7 +684,7 @@ transform-origin은 엘리먼트에 transform이 적용될 때, transform이 무
 
 <br/>
 <br/>
-<div align="center"> <img src="/readme_assets/gifs/15.gif" width="800px"  alt="그림 15: 그림 확대하기 기능 최종 결과 .gif "></div>
+<div align="center"> <img src="/readme_assets/gifs/15.gif" width="1000px"  alt="그림 15: 그림 확대하기 기능 최종 결과 .gif "></div>
 
 <br/>
 <br/>
